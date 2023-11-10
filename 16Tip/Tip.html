@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/Tip.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+	<h1>Some Memorable Movies</h1>
+	<h3><span class="ital">Shark Tale</span> (Rob Letterman, Bibo Bergeron, Vicky Jenson, 2004) </h3>
+	<div class="sideBySide">
+	<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/tipimg1.png" alt="chase"> 
+	<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/tipimg2.png" alt="sharktale">
+	<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/tipimg3.png" alt="sharktale">
+	</div>
+		
+	<p class="filminfo" id="DTRT_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolorum dolore inventore omnis reiciendis expedita repellendus est fuga quae distinctio quaerat excepturi veniam nihil unde aut dolor, officia sint facere architecto incidunt molestias hic voluptatibus enim iste quibusdam! Nemo pariatur numquam, minima praesentium quia deserunt voluptate molestiae ratione est nulla.</p>
+	
+	<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+</body>
+<script>
+	
+function gotoMovie(){
+	window.open("https://www.youtube.com/watch?v=mZ--8cpWtZg", "_blank");
+}
+
+	var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+	gotoMovie_btn.style.visibility = "hidden";
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML= SHTL01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}	
+	
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML= SHTL02;
+		img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}	
+	
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML= SHTL03;
+			img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}	
+		
+
+	
+var DTRT_text=document.getElementById("DTRT_text");
+var DTRT00= "Tip is an animated short I created for my Film 180 class. For the project assignment, we were each given an image. We were each tasked with making a film inspired by the image. I received an image of two blurry figures running down the street in the dead of night, lit by neon blue light. I chose to create a simple story of a man being chased by a waiter for stiffing him on the tip. I played around with live background footage with animated characters. I enjoyed the project but I left a lot of editing errors. "
+	
+	DTRT_text.innerHTML= DTRT00;
+	
+	var SHTL02 = "When the man finally stops running, the two have a bit of a stare-down near a tree. Very cinematic, thematic, and deep shots that strike your very soul. The man sees a Nerf gun on the ground and shoots the waiter to stop him. A chill goes up the waiter's spine as he feels the Nerf bullet. And..."
+	
+	var SHTL03 = "It kills him. Straight does him in. My man got wasted. Remorseful, the stingy customer pays his respects. He drops a bill in front of the headstone. He salutes as a sad piano plays in the background. Cut to black. It didn't win any awards at the golden globes, I cant imagine why."
+	
+	var SHTL01 = "The man is being chased down the street. This was my favorite shot to make. The character is running at the camera. I tried to make the light naturally reflect off him, it grew brighter and faded as he ran past the store and lampost. I had a camera turn lined up with the character changing directions at the end of this shot."
+	
+	function revealButton(){
+		if (img01_clicked && img02_clicked && img03_clicked){
+			console.log("REVEAL BUTTON");
+			gotoMovie_btn.style.visibility= "visible";
+		}
+	}
+
+	</script>
+</html>
